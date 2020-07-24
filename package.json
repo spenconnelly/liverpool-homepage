@@ -39,5 +39,10 @@
     "eslint-plugin-jest": "^23.18.0",
     "eslint-plugin-react": "^7.20.3",
     "husky": "^4.2.5"
+  },
+  "husky": {
+    "hooks": {
+        "pre-commit": "npm run lint && npm run test"
+    }
   }
 }
