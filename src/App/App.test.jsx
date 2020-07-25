@@ -3,6 +3,8 @@ import { mount } from 'enzyme'
 
 import App from './App'
 import DefaultThemeprovider from '../themes/DefaultThemeProvider'
+import NavigationBar from '../components/NavigationBar'
+import Footer from '../components/Footer'
 
 describe('App component', () => {
     let wrapper
@@ -13,7 +15,11 @@ describe('App component', () => {
 
     describe('Rendering', () => {
         beforeEach(() => {
-            wrapper = mount(<App />)
+            wrapper = mount(
+                <DefaultThemeprovider>
+                    <App />
+                </DefaultThemeprovider>
+            )
         })
 
         it('should render properly', () => {
@@ -22,10 +28,10 @@ describe('App component', () => {
             expect(app.exists()).toBeTruthy()
         })
 
-        it('should use default theme', () => {
-            const defaultTheme = wrapper.find(DefaultThemeprovider)
+        it('should render Footer component', () => {
+            const footer = wrapper.find(Footer)
 
-            expect(defaultTheme.exists()).toBeTruthy()
+            expect(footer.exists()).toBeTruthy()
         })
     })
 })

@@ -1,13 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
+import DefaultThemeProvider from './themes/DefaultThemeProvider'
 import * as serviceWorker from './serviceWorker'
 import './index.css'
 
 ReactDOM.render(
-    <React.StrictMode>
+    <DefaultThemeProvider>
         <App />
-    </React.StrictMode>,
+    </DefaultThemeProvider>,
     document.getElementById('root')
 )
 
