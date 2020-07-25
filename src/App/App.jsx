@@ -1,10 +1,13 @@
 import React from 'react'
+import DefaultThemeProvider from '../themes/DefaultThemeProvider'
 
 function App() {
     return (
-        <div>
-            Spencer's React Template
-        </div>
+        <DefaultThemeProvider>
+            <div>
+                Spencer's React Template
+            </div>
+        </DefaultThemeProvider>
     )
 }
 
