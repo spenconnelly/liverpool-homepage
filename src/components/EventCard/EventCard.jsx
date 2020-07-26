@@ -55,7 +55,8 @@ function EventCard(props) {
         >
             <div className={classes.infoContainer}>
                 <span className={classes.titleModifier}>{ name }</span>
-                <div>{ league } { season }</div>
+                <div>{ league }</div>
+                <div>{ season }</div>
                 <div>Where: { date }</div>
             </div>
             { image && (
