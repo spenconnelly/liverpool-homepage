@@ -1,4 +1,4 @@
-Hello! This project is a sample landing page for Liverpool FC
+Hello! This project is a sample landing page ( or website ) for Liverpool FC
 
 ## Steps to run for the first time
 
