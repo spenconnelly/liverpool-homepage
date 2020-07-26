@@ -54,11 +54,12 @@ function EventsContainer() {
 
     return (
         <div className={classes.root}>
+            { (liverpoolData && !(apiError || isDbDataLoading)) && <img alt="" src={liverpoolData.strTeamBanner} width="100%" /> }
             <span className={classes.titleModifier}>Upcoming Events:</span>
             <div className={classes.eventContainer}>
                 {(error || events.length === 0) ? (
                     <span>
-                        No Upcoming Events
+                        No Upcoming Events... We'll be back soon!
                     </span>
                 ) : (
                     <>

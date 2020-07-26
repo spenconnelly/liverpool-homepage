@@ -23,8 +23,7 @@ const useStyles = createUseStyles(theme => ({
         marginRight: 15,
     },
     imageContainer: {
-        marginTop: 15,
-        marginBottom: 15
+        marginTop: 15
     }
 }))
 
@@ -38,7 +37,7 @@ function FansContainer(props) {
                 Message to the fans:
             </div>
             <div className={classes.contentContainer}>
-                Congratualtions to everyone on the club's first Premier League title in 30 years. Here is a video and some other fan art to highlight the journey!
+                Congratualtions to everyone on the club's first Premier League title in 30 years. Here is a video and some other fan art to highlight the journey! You'll Never Walk Alone.
             </div>
             <iframe
                 title="Thank you fans"
