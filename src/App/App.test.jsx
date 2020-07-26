@@ -28,6 +28,12 @@ describe('App component', () => {
             expect(app.exists()).toBeTruthy()
         })
 
+        it('should render NavigationBar component', () => {
+            const navBar = wrapper.find(NavigationBar)
+
+            expect(navBar.exists()).toBeTruthy()
+        })
+
         it('should render Footer component', () => {
             const footer = wrapper.find(Footer)
 
