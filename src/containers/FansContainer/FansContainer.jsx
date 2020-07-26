@@ -47,7 +47,7 @@ function FansContainer(props) {
                 src="https://www.youtube.com/embed/WHEthsO7T7w"
                 frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
+                allowFullScreen
             />
             { liverpoolData && !(isDbDataLoading || error) && (
                 <>
