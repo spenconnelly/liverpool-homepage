@@ -1,32 +1,29 @@
 import React from 'react'
 import { mount } from 'enzyme'
 
-import SportsDbApiContextProvider from '../SportsDbApiContextProvider'
 import DefaultThemeProvider from '../../themes/DefaultThemeProvider'
-import Footer from './Footer'
+import ContentContainer from './ContentContainer'
 
-describe('Footer component', () => {
+describe('ContentContainer component', () => {
     let wrapper
 
     it('should be defined', () => {
-        expect(Footer).toBeDefined()
+        expect(ContentContainer).toBeDefined()
     })
 
     describe('Rendering', () => {
         beforeEach(() => {
             wrapper = mount(
                 <DefaultThemeProvider>
-                    <SportsDbApiContextProvider>
-                        <Footer />
-                    </SportsDbApiContextProvider>
+                    <ContentContainer />
                 </DefaultThemeProvider>
             )
         })
 
         it('should render properly', () => {
-            const footer = wrapper.find(Footer)
+            const contentContainer = wrapper.find(ContentContainer)
 
-            expect(footer.exists()).toBeTruthy()
+            expect(contentContainer.exists()).toBeTruthy()
         })
     })
 })

@@ -14,7 +14,15 @@ const useStyles = createUseStyles(theme => ({
         color: 'white',
         fontWeight: theme.typography.semiBold,
         textDecoration: 'none',
-        fontSize: 20
+        textTransform: 'uppercase',
+        fontSize: 15,
+        '&:hover': {
+            fontWeight: theme.typography.extraBold,
+            textDecoration: 'underline'
+        },
+        [`@media (min-width: ${theme.breakpoints.sm}px)`]: {
+            fontSize: 20,
+        }
     },
     selectedModifier: {
         textDecoration: 'underline',

@@ -1,32 +1,29 @@
 import React from 'react'
 import { mount } from 'enzyme'
 
-import SportsDbApiContextProvider from '../SportsDbApiContextProvider'
 import DefaultThemeProvider from '../../themes/DefaultThemeProvider'
-import Footer from './Footer'
+import EventCard from './EventCard'
 
-describe('Footer component', () => {
+describe('EventCard component', () => {
     let wrapper
 
     it('should be defined', () => {
-        expect(Footer).toBeDefined()
+        expect(EventCard).toBeDefined()
     })
 
     describe('Rendering', () => {
         beforeEach(() => {
             wrapper = mount(
                 <DefaultThemeProvider>
-                    <SportsDbApiContextProvider>
-                        <Footer />
-                    </SportsDbApiContextProvider>
+                    <EventCard />
                 </DefaultThemeProvider>
             )
         })
 
         it('should render properly', () => {
-            const footer = wrapper.find(Footer)
+            const eventCard = wrapper.find(EventCard)
 
-            expect(footer.exists()).toBeTruthy()
+            expect(eventCard.exists()).toBeTruthy()
         })
     })
 })

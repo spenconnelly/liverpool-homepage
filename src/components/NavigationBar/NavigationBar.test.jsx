@@ -2,6 +2,7 @@ import React from 'react'
 import { mount } from 'enzyme'
 import { BrowserRouter as Router } from 'react-router-dom'
 
+import SportsDbApiContextProvider from '../SportsDbApiContextProvider'
 import DefaultThemeProvider from '../../themes/DefaultThemeProvider'
 import NavigationBar from './NavigationBar'
 
@@ -15,11 +16,13 @@ describe('NavigationBar component', () => {
     describe('Rendering', () => {
         beforeEach(() => {
             wrapper = mount(
-                <DefaultThemeProvider>
-                    <Router>
-                        <NavigationBar />
-                    </Router>
-                </DefaultThemeProvider>
+                <SportsDbApiContextProvider>
+                    <DefaultThemeProvider>
+                        <Router>
+                            <NavigationBar />
+                        </Router>
+                    </DefaultThemeProvider>
+                </SportsDbApiContextProvider>
             )
         })
 

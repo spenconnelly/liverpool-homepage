@@ -8,13 +8,16 @@ import {
 } from 'react-router-dom'
 
 import NavigationBar from '../components/NavigationBar'
-import HomeContainer from '../containers/HomeContainer'
+import SportsDbApiContextProvider from '../components/SportsDbApiContextProvider'
 import Footer from '../components/Footer'
+import ContentContainer from '../components/ContentContainer'
+
+import HomeContainer from '../containers/HomeContainer'
+import EventsContainer from '../containers/EventsContainer'
+import FansContainer from '../containers/FansContainer'
+import HistoryContainer from '../containers/HistoryContainer'
 
 const useStyles = createUseStyles({
-    root: {
-        minHeight: 'calc(100vh - 55px)'
-    }
 })
 
 const navRoutes = [
@@ -23,8 +26,16 @@ const navRoutes = [
         value: '/'
     },
     {
-        label: 'About',
-        value: '/about'
+        label: 'Events',
+        value: '/events'
+    },
+    {
+        label: 'Fans',
+        value: '/fans'
+    },
+    {
+        label: 'History',
+        value: '/history'
     }
 ]
 
@@ -32,18 +43,23 @@ function App() {
     const classes = useStyles()
 
     return (
-        <>
-            <Router>
-                <div className={classes.root}>
+        <SportsDbApiContextProvider>
+            <div className={classes.root}>
+                <Router>
                     <NavigationBar navRoutes={navRoutes} />
-                    <Switch>
-                        <Route path="/" component={HomeContainer} />
-                        <Redirect path="*" to="/" />
-                    </Switch>
-                </div>
-            </Router>
+                    <ContentContainer>
+                        <Switch>
+                            <Route path="/events" component={EventsContainer} />
+                            <Route path="/fans" component={FansContainer} />
+                            <Route path="/history" component={HistoryContainer} />
+                            <Route path="/" component={HomeContainer} />
+                            <Redirect path="*" to="/" />
+                        </Switch>
+                    </ContentContainer>
+                </Router>
+            </div>
             <Footer />
-        </>
+        </SportsDbApiContextProvider>
     )
 }
 
